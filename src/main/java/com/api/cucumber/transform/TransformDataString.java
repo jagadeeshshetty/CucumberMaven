@@ -10,10 +10,9 @@ public class TransformDataString extends Transformer<String> {
     /**
      * @param s
      * @return String data.
-     * @throws Throwable
      */
     @Override
-    public String transform(String s) throws Throwable {
+    public String transform(String s) {
         return s + "/endpoint";
     }
 }

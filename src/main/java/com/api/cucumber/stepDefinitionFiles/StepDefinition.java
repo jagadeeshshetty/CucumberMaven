@@ -1,14 +1,15 @@
 package com.api.cucumber.stepDefinitionFiles;
 
 import com.api.cucumber.transform.TransformDataString;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.DataTable;
+import cucumber.api.Transform;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 import java.util.List;
 
-public class PostStepDfn {
+public class StepDefinition {
     @Given("A precondition")
     public void a_precondition() {
         log("Still need to figure out a precondition!");
@@ -43,7 +44,7 @@ public class PostStepDfn {
         // Double, Byte, Short, Long, BigInteger or BigDecimal.
         //
         // For other transformations you can register a DataTableType.
-        List<List<String>> data = dataTable.asLists();
+        List<List<String>> data = dataTable.raw();
         for (List<String> row : data) {
             for (String column : row) {
                 log(column);
@@ -55,8 +56,8 @@ public class PostStepDfn {
         System.out.println("  LOG: " + string);
     }
 
-    @When("I navigate to {string} with an endpoint")
-    public void iNavigateToWithAnEndpoint(@Transform(TransformDataString.class) String arg0) {
-        log("Value: " + arg0);
+    @When("^I navigate to \"([^\"]*)\" with a home endpoint$")
+    public void i_navigate_to_with_an_endpoint(@Transform(TransformDataString.class) String endpointValue) {
+        log(endpointValue);
     }
 }
