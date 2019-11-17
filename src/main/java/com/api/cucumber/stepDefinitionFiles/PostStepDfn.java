@@ -1,5 +1,6 @@
 package com.api.cucumber.stepDefinitionFiles;
 
+import com.api.cucumber.transform.TransformDataString;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -52,5 +53,10 @@ public class PostStepDfn {
 
     private void log(String string) {
         System.out.println("  LOG: " + string);
+    }
+
+    @When("I navigate to {string} with an endpoint")
+    public void iNavigateToWithAnEndpoint(@Transform(TransformDataString.class) String arg0) {
+        log("Value: " + arg0);
     }
 }
