@@ -8,11 +8,11 @@ import cucumber.api.Transformer;
 public class TransformDataString extends Transformer<String> {
 
     /**
-     * @param s
+     * @param endpointValue
      * @return String data.
      */
     @Override
-    public String transform(String s) {
-        return s + "/endpoint";
+    public String transform(String endpointValue) {
+        return endpointValue + "/endpointFromUserDefinedString";
     }
 }

@@ -56,7 +56,7 @@ public class StepDefinition {
         System.out.println("  LOG: " + string);
     }
 
-    @When("^I navigate to \"([^\"]*)\" with a home endpoint$")
+    @When("^I navigate to \"([^\"]*)\" url with a stringTransform endpoint$")
     public void i_navigate_to_with_an_endpoint(@Transform(TransformDataString.class) String endpointValue) {
         log(endpointValue);
     }
