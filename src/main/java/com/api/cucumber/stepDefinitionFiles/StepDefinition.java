@@ -1,6 +1,7 @@
 package com.api.cucumber.stepDefinitionFiles;
 
 import com.api.cucumber.transform.TransformDataString;
+import com.genericMethods.GM;
 import cucumber.api.DataTable;
 import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
@@ -12,27 +13,27 @@ import java.util.List;
 public class StepDefinition {
     @Given("A precondition")
     public void a_precondition() {
-        log("Still need to figure out a precondition!");
+        GM.log("Still need to figure out a precondition!");
     }
 
     @When("Perform an action")
     public void perform_an_action() {
-        log("Will perform an action.");
+        GM.log("Will perform an action.");
     }
 
     @Then("Validate the action")
     public void validate_the_action() {
-        log("Will validate the result from a previous action.");
+        GM.log("Will validate the result from a previous action.");
     }
 
     @Then("Validate other action")
     public void validate_other_action() {
-        log("Additional validation with previous step.");
+        GM.log("Additional validation with previous step.");
     }
 
     @Then("Validate negative action")
     public void validate_negative_action() {
-        log("A negative validation step.");
+        GM.log("A negative validation step.");
     }
 
     @When("I login with valid username and password")
@@ -47,17 +48,13 @@ public class StepDefinition {
         List<List<String>> data = dataTable.raw();
         for (List<String> row : data) {
             for (String column : row) {
-                log(column);
+                GM.log(column);
             }
         }
     }
 
-    private void log(String string) {
-        System.out.println("  LOG: " + string);
-    }
-
     @When("^I navigate to \"([^\"]*)\" url with a stringTransform endpoint$")
     public void i_navigate_to_with_an_endpoint(@Transform(TransformDataString.class) String endpointValue) {
-        log(endpointValue);
+        GM.log(endpointValue);
     }
 }
