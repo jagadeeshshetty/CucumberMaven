@@ -57,4 +57,9 @@ public class StepDefinition {
     public void i_navigate_to_with_an_endpoint(@Transform(TransformDataString.class) String endpointValue) {
         GM.log(endpointValue);
     }
+
+    @When("^I try to divide number by zero$")
+    public void iTryToDivideNumberByZero() {
+        GM.log("Divide 2/0" + 2 / 0);
+    }
 }
