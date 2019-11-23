@@ -18,7 +18,8 @@ public class GeneralHooks {
      * 1. Create the public method.
      * 2. Use the @Before and @After annotations.
      * 3. Specify the package in the runner.
-     * 4. [Optional] To get the run time info about the scenario, inject the Scenario Object in the hook method.
+     * 4. [Optional] To get the run time info about the scenario which is being executed,
+     * inject the Scenario Object in the hook method.
      */
 
     @Before

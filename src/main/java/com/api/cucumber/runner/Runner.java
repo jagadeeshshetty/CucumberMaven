@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = {"src/main/java/com/api/cucumber/featureFiles"},
         glue = {"com.api.cucumber.stepDefinitionFiles",
                 "com.api.cucumber.hooks"},
-        tags = "not @arithmeticExceptionFail"
+        tags = ""
+//        tags = "not @arithmeticExceptionFail"
 //        tags = "tag1 or tag2"
 //        plugin = "pretty",
 //        dryRun = true
