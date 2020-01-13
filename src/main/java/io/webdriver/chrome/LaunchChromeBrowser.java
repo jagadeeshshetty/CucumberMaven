@@ -7,5 +7,6 @@ public class LaunchChromeBrowser {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         System.out.println(driver.toString());
+        driver.quit();
     }
 }
