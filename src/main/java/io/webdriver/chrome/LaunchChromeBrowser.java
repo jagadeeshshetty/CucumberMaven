@@ -4,9 +4,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LaunchChromeBrowser {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+        if (System.getProperty("os.name").contains("Mac OS X"))
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
+        else
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+
         ChromeDriver driver = new ChromeDriver();
         System.out.println(driver.toString());
-        driver.quit();
+
+        if (driver != null)
+            driver.quit();
     }
 }
