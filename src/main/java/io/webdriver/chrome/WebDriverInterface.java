@@ -6,8 +6,13 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 public class WebDriverInterface {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
-        System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "\\driver\\phantomjs.exe");
+        if (System.getProperty("os.name").contains("Mac OS X")) {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
+            System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "/driver/phantomjs");
+        } else {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+            System.setProperty("phantomjs.binary.path", System.getProperty("user.dir") + "\\driver\\phantomjs.exe");
+        }
 
         WebDriver driver;
 
